@@ -1,0 +1,35 @@
+{
+  "version": "0.0.11",
+  "name": "average-rating",
+  "description": "Calculate average score and rating based on Wilson Score Equation",
+  "homepage": "http://techpush.net",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ndaidong/average-rating.git"
+  },
+  "author": "Dong Nguyen <ndaidong@gmail.com> (https://twitter.com/ndaidong)",
+  "main": "./index.js",
+  "engines": {
+    "node": ">= 4.0"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "bellajs": "latest"
+  },
+  "devDependencies": {
+    "mocha": "latest",
+    "chai": "latest"
+  },
+  "license": "MIT",
+  "maintainers": [
+    "ndaidong <ndaidong@gmail.com>"
+  ],
+  "bugs": {
+    "url": "https://github.com/ndaidong/average-rating/issues"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
