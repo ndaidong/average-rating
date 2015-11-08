@@ -13,3 +13,13 @@ let rating = [134055, 57472, 143135, 365957, 1448459];
 let score = Calculator.score(rating); // --> 0.84
 let average = Calculator.average(rating); // --> 4.4
 ```
+
+
+## Test
+
+```
+npm install
+mocha
+```
+
+ _* Ensure that you have [mocha](https://mochajs.org/) installed_
