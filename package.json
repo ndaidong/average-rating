@@ -1,5 +1,5 @@
 {
-  "version": "0.1.12",
+  "version": "0.1.2",
   "name": "average-rating",
   "description": "Calculate average score and rating based on Wilson Score Equation",
   "homepage": "http://techpush.net",
@@ -15,10 +15,11 @@
   "scripts": {
     "test": "mocha test"
   },
-  "dependencies": {
-    "bellajs": "latest"
+  "scripts": {
+    "test": "mocha test"
   },
   "devDependencies": {
+    "bellajs": "latest",
     "mocha": "latest",
     "chai": "latest"
   },
