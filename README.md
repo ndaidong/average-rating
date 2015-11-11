@@ -1,6 +1,8 @@
 # average-rating
 Calculate  average and scoring based on Wilson Score Equation
 
+![Travis](https://travis-ci.org/ndaidong/average-rating.svg?branch=master)
+
 ![Google app on Google Play](http://i.imgur.com/NgQX5OW.png)
 
 ## Usage
