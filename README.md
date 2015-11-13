@@ -1,7 +1,7 @@
 # average-rating
 Calculate  average and scoring based on Wilson Score Equation
 
-![Travis](https://travis-ci.org/ndaidong/average-rating.svg?branch=master)
+[![NPM](https://badge.fury.io/js/average-rating.svg)](https://badge.fury.io/js/average-rating) ![Travis](https://travis-ci.org/ndaidong/average-rating.svg?branch=master)
 
 ![Google app on Google Play](http://i.imgur.com/NgQX5OW.png)
 
