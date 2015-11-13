@@ -8,12 +8,12 @@ Calculate  average and scoring based on Wilson Score Equation
 ## Usage
 
 ```
-import Calculator from 'average-rating';
+import {score, average} from 'average-rating';
 
 // from 1 to 5 stars
 let rating = [134055, 57472, 143135, 365957, 1448459];
-let score = Calculator.score(rating); // --> 0.84
-let average = Calculator.average(rating); // --> 4.4
+score(rating); // --> 0.84
+average(rating); // --> 4.4
 ```
 
 
