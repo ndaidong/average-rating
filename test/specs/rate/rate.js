@@ -21,13 +21,13 @@ var rootDir = '../../../src/';
 
 var AverageRating = require(path.join(rootDir, 'average-rating'));
 
-describe('.average()', () => {
+describe('.rate()', () => {
 
   samples.forEach((sample) => {
     let rating = sample.rating;
-    let expectation = sample.expect.average;
+    let expectation = sample.expect.score;
     describe(rating.join(', '), () => {
-      let result = Number(AverageRating.average(rating));
+      let result = Number(AverageRating.rate(rating));
       it(' should be ' + expectation, (done) => {
         expect(result).to.equal(expectation);
         done();

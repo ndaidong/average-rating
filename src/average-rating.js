@@ -6,8 +6,17 @@
 
 'use strict'; // to use "let" keyword
 
+var getWilsonScore = (p, n) => {
+  if(p === 0 && n === 0){
+    return 0;
+  }
+  let r = ((p + 1.9208) / (p + n) - 1.96 * Math.sqrt((p * n) / (p + n) + 0.9604) / (p + n)) / (1 + 3.8416 / (p + n));
+  return r.toFixed(2);
+}
+
 module.exports = {
-  score: (rating) => {
+  score: getWilsonScore,
+  rate: (rating) => {
 
     var n = 0, p = 0;
     n += rating[0];
@@ -19,12 +28,7 @@ module.exports = {
     p += rating[3] * 0.75;
     p += rating[4];
 
-    if(p === 0 && n === 0){
-      return 0;
-    }
-
-    let r = ((p + 1.9208) / (p + n) - 1.96 * Math.sqrt((p * n) / (p + n) + 0.9604) / (p + n)) / (1 + 3.8416 / (p + n));
-    return r.toFixed(2);
+    return getWilsonScore(p, n);
   },
   average: (rating) => {
     let total = rating.reduce((prev, current) => {

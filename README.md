@@ -8,14 +8,18 @@ Calculate  average and scoring based on Wilson Score Equation
 ## Usage
 
 ```
-import {score, average} from 'average-rating';
+import {rate, average, score} from 'average-rating';
 
 // from 1 to 5 stars
 let rating = [134055, 57472, 143135, 365957, 1448459];
-score(rating); // --> 0.84
+rate(rating); // --> 0.84
 average(rating); // --> 4.4
-```
 
+// get Winson score for a pair of (Positive, Negative) voting
+score(0, 1000); // --> 0
+score(1000, 0); // --> 0.96
+score(1000, 1000); // --> 0.48
+```
 
 ## Test
 
