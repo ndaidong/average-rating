@@ -12,7 +12,7 @@ var getWilsonScore = (p, n) => {
   }
   let r = ((p + 1.9208) / (p + n) - 1.96 * Math.sqrt(p * n / (p + n) + 0.9604) / (p + n)) / (1 + 3.8416 / (p + n));
   return r.toFixed(2);
-}
+};
 
 module.exports = {
   score: getWilsonScore,
@@ -45,4 +45,4 @@ module.exports = {
     let r = sum / total;
     return r.toFixed(1);
   }
-}
+};
