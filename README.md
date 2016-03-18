@@ -27,5 +27,3 @@ score(1000, 1000); // --> 0.48
 npm install
 mocha
 ```
-
- _* Ensure that you have [mocha](https://mochajs.org/) installed_
