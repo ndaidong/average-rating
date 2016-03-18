@@ -29,3 +29,8 @@ score(1000, 1000); // --> 0.48
 npm install
 npm test
 ```
+
+
+# License
+
+The MIT License (MIT)
