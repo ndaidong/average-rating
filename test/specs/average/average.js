@@ -2,7 +2,7 @@
  * Testing
  * @ndaidong
  */
-/* global describe it */
+
 /* eslint no-undefined: 0*/
 /* eslint no-array-constructor: 0*/
 /* eslint no-new-func: 0*/
@@ -10,10 +10,7 @@
 'use strict';
 
 var path = require('path');
-var chai = require('chai');
-
-chai.should();
-var expect = chai.expect;
+var test = require('tape');
 
 var samples = require('../samples');
 
@@ -21,17 +18,15 @@ var rootDir = '../../../src/';
 
 var AverageRating = require(path.join(rootDir, 'average-rating'));
 
-describe('.average()', () => {
+test('Testing "average" method', (assert) => {
 
   samples.forEach((sample) => {
     let rating = sample.rating;
-    let expectation = sample.expect.average;
-    describe(rating.join(', '), () => {
-      let result = Number(AverageRating.average(rating));
-      it(' should be ' + expectation, (done) => {
-        expect(result).to.equal(expectation);
-        done();
-      });
-    });
+    let expect = sample.expect.average;
+    let actual = Number(AverageRating.average(rating));
+    let s = rating.join(', ');
+    assert.deepEqual(actual, expect, `.average([${s}]) should be ${actual}`);
   });
+
+  assert.end();
 });

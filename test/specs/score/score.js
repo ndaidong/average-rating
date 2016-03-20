@@ -2,7 +2,7 @@
  * Testing
  * @ndaidong
  */
-/* global describe it */
+
 /* eslint no-undefined: 0*/
 /* eslint no-array-constructor: 0*/
 /* eslint no-new-func: 0*/
@@ -10,10 +10,7 @@
 'use strict';
 
 var path = require('path');
-var chai = require('chai');
-
-chai.should();
-var expect = chai.expect;
+var test = require('tape');
 
 var rootDir = '../../../src/';
 
@@ -87,16 +84,13 @@ let samples = [
   }
 ];
 
-describe('.score()', () => {
+test('Testing "score" method', (assert) => {
 
   samples.forEach((sample) => {
-    let expectation = sample.e;
-    describe(`Positive: ${sample.p}, Negative: ${sample.n}`, () => {
-      let result = Number(AverageRating.score(sample.p, sample.n));
-      it(' should be ' + expectation, (done) => {
-        expect(result).to.equal(expectation);
-        done();
-      });
-    });
+    let expect = sample.e;
+    let actual = Number(AverageRating.score(sample.p, sample.n));
+    assert.deepEqual(actual, expect, `.score(${sample.p}, ${sample.n}) should be ${actual}`);
   });
+
+  assert.end();
 });
