@@ -10,7 +10,10 @@ Calculate  average and scoring based on Wilson Score Equation
 ## Usage
 
 ```
-import {rate, average, score} from 'average-rating';
+var av = require('average-rating');
+var rate = av.rate;
+var average = av.average;
+var score = av.score;
 
 // from 1 to 5 stars
 let rating = [134055, 57472, 143135, 365957, 1448459];

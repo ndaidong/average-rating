@@ -1,13 +1,13 @@
 {
-  "version": "0.3.1",
+  "version": "0.4.0",
   "name": "average-rating",
   "description": "Calculate average score and rating based on Wilson Score Equation",
-  "homepage": "http://techpush.net",
+  "homepage": "https://www.npmjs.com/package/average-rating",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ndaidong/average-rating.git"
+    "url": "https://github.com/ndaidong/average-rating"
   },
-  "author": "Dong Nguyen <ndaidong@gmail.com> (https://twitter.com/ndaidong)",
+  "author": "@ndaidong",
   "main": "./index.js",
   "engines": {
     "node": ">= 4.0"
