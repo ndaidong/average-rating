@@ -3,20 +3,11 @@
  * @ndaidong
  */
 
-/* eslint no-undefined: 0*/
-/* eslint no-array-constructor: 0*/
-/* eslint no-new-func: 0*/
-
-'use strict';
-
-var path = require('path');
 var test = require('tape');
 
+var AverageRating = require('../../../index');
+
 var samples = require('../samples');
-
-var rootDir = '../../../src/';
-
-var AverageRating = require(path.join(rootDir, 'average-rating'));
 
 test('Testing "rate" method', (assert) => {
 

@@ -1,5 +1,5 @@
 {
-  "version": "0.4.0",
+  "version": "1.0.0",
   "name": "average-rating",
   "description": "Calculate average score and rating based on Wilson Score Equation",
   "homepage": "https://www.npmjs.com/package/average-rating",
@@ -10,17 +10,19 @@
   "author": "@ndaidong",
   "main": "./index.js",
   "engines": {
-    "node": ">= 4.0"
+    "node": ">= 6.0"
   },
   "scripts": {
-    "test": "./node_modules/.bin/tape test/start.js | tap-spec",
-    "coverage": "./node_modules/.bin/nyc tape test/start.js | tap-spec",
-    "report": "npm run coverage && ./node_modules/.bin/nyc report --reporter=lcov",
-    "coveralls": "npm run report && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
+    "test": "snyk test && tape test/start.js | tap-spec",
+    "coverage": "nyc tape test/start.js | tap-spec",
+    "report": "npm run coverage && nyc report --reporter=lcov",
+    "coveralls": "npm run report && cat ./coverage/lcov.info | coveralls",
+    "snyk": "snyk wizard"
   },
   "devDependencies": {
     "coveralls": "latest",
     "nyc": "latest",
+    "snyk": "latest",
     "tap-spec": "latest",
     "tape": "latest"
   },

@@ -4,6 +4,8 @@ Calculate  average and scoring based on Wilson Score Equation
 [![NPM](https://badge.fury.io/js/average-rating.svg)](https://badge.fury.io/js/average-rating)
 ![Travis](https://travis-ci.org/ndaidong/average-rating.svg?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/ndaidong/average-rating/badge.svg?branch=master)](https://coveralls.io/github/ndaidong/average-rating?branch=master)
+![devDependency Status](https://david-dm.org/ndaidong/average-rating.svg)
+[![Known Vulnerabilities](https://snyk.io/test/npm/average-rating/badge.svg)](https://snyk.io/test/npm/average-rating)
 
 ![Google app on Google Play](http://i.imgur.com/NgQX5OW.png)
 
@@ -29,6 +31,8 @@ score(1000, 1000); // --> 0.48
 ## Test
 
 ```
+git clone https://github.com/ndaidong/average-rating.git
+cd average-rating
 npm install
 npm test
 ```

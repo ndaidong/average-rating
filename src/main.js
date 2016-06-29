@@ -4,8 +4,6 @@
  * Refer: https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval
  **/
 
-'use strict'; // to use "let" keyword
-
 var getWilsonScore = (p, n) => {
   if (p === 0 && n === 0) {
     return 0;
@@ -18,7 +16,8 @@ module.exports = {
   score: getWilsonScore,
   rate: (rating) => {
 
-    var n = 0, p = 0;
+    let n = 0;
+    let p = 0;
     n += rating[0];
     n += rating[1] * 0.75;
     p += rating[1] * 0.25;
@@ -37,7 +36,8 @@ module.exports = {
     if (total === 0) {
       return 0;
     }
-    let sum = 0, k = 1;
+    let sum = 0;
+    let k = 1;
     rating.forEach((item) => {
       sum += item * k;
       k++;
