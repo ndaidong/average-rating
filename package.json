@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "average-rating",
   "description": "Calculate average score and rating based on Wilson Score Equation",
   "homepage": "https://www.npmjs.com/package/average-rating",
@@ -13,14 +13,19 @@
     "node": ">= 6.0"
   },
   "scripts": {
-    "test": "snyk test && tape test/start.js | tap-spec",
-    "coverage": "nyc tape test/start.js | tap-spec",
-    "report": "npm run coverage && nyc report --reporter=lcov",
-    "coveralls": "npm run report && cat ./coverage/lcov.info | coveralls",
-    "snyk": "snyk wizard"
+    "lint": "eslint .",
+    "snyk": "snyk test",
+    "tape": "nyc tape test/start.js | tap-spec",
+    "report": "nyc report --reporter=lcov",
+    "pretest": "npm run lint && npm run snyk",
+    "test": "npm run tape",
+    "posttest": "npm run report",
+    "coveralls": "npm test && cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
     "coveralls": "latest",
+    "eslint": "latest",
+    "eslint-config-ggc": "latest",
     "nyc": "latest",
     "snyk": "latest",
     "tap-spec": "latest",
@@ -35,14 +40,5 @@
     "Wilson Score",
     "util"
   ],
-  "license": "MIT",
-  "maintainers": [
-    "ndaidong <ndaidong@gmail.com>"
-  ],
-  "bugs": {
-    "url": "https://github.com/ndaidong/average-rating/issues"
-  },
-  "directories": {
-    "test": "test"
-  }
+  "license": "MIT"
 }

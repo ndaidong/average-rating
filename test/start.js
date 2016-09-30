@@ -1,5 +1,3 @@
-'use strict';
-
 var fs = require('fs');
 var path = require('path');
 
@@ -7,7 +5,7 @@ var path = require('path');
  * Import specs
  */
 
-var dirs = [ 'average', 'rate', 'score' ];
+var dirs = ['average', 'rate', 'score'];
 dirs.forEach((dir) => {
   let where = './test/specs/' + dir;
   if (fs.existsSync(where)) {
