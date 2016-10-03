@@ -4,7 +4,7 @@ Calculate  average and scoring based on Wilson Score Equation
 [![NPM](https://badge.fury.io/js/average-rating.svg)](https://badge.fury.io/js/average-rating)
 [![Build Status](https://travis-ci.org/ndaidong/average-rating.svg?branch=master)](https://travis-ci.org/ndaidong/average-rating)
 [![Coverage Status](https://coveralls.io/repos/github/ndaidong/average-rating/badge.svg?branch=master)](https://coveralls.io/github/ndaidong/average-rating?branch=master)
-[![dependencies Status](https://david-dm.org/ndaidong/average-rating/status.svg)](https://david-dm.org/ndaidong/average-rating)
+[![Dependency Status](https://gemnasium.com/badges/github.com/ndaidong/average-rating.svg)](https://gemnasium.com/github.com/ndaidong/average-rating)
 [![Known Vulnerabilities](https://snyk.io/test/npm/average-rating/badge.svg)](https://snyk.io/test/npm/average-rating)
 
 ![Google app on Google Play](http://i.imgur.com/NgQX5OW.png)
