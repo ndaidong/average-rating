@@ -2,9 +2,9 @@
 Calculate  average and scoring based on Wilson Score Equation
 
 [![NPM](https://badge.fury.io/js/average-rating.svg)](https://badge.fury.io/js/average-rating)
-![Travis](https://travis-ci.org/ndaidong/average-rating.svg?branch=master)
+[![Build Status](https://travis-ci.org/ndaidong/average-rating.svg?branch=master)](https://travis-ci.org/ndaidong/average-rating)
 [![Coverage Status](https://coveralls.io/repos/github/ndaidong/average-rating/badge.svg?branch=master)](https://coveralls.io/github/ndaidong/average-rating?branch=master)
-[![Dependency Status](https://www.versioneye.com/user/projects/57e8df1bbd6fa600512e3a65/badge.svg?style=flat)](https://www.versioneye.com/user/projects/57e8df1bbd6fa600512e3a65)
+[![dependencies Status](https://david-dm.org/ndaidong/average-rating/status.svg)](https://david-dm.org/ndaidong/average-rating)
 [![Known Vulnerabilities](https://snyk.io/test/npm/average-rating/badge.svg)](https://snyk.io/test/npm/average-rating)
 
 ![Google app on Google Play](http://i.imgur.com/NgQX5OW.png)
@@ -27,6 +27,27 @@ score(0, 1000); // --> 0
 score(1000, 0); // --> 0.96
 score(1000, 1000); // --> 0.48
 ```
+
+# API reference
+
+### .score(Number positive, Number negative)
+
+Return a value from 0 to 1.
+
+Used for the systems of Positive/Negative rating, such as the videos on YouTube, the answers on StackOverflow, etc. In which, each of item can be voted as good or bad, like or dislike or something like that.
+
+### .rate(Array ratings)
+
+Return a value from 0 to 1.
+
+Used for the systems of 5 rating levels, such as the applications on Google Play store, the books on Amazon, etc. In which, each of item can be voted as one of value in the range of 1 to 5 stars.
+
+### .average(Array ratings)
+
+Return a value from 0 to 5.
+
+Calculate normal average value for the systems of 5 rating levels.
+
 
 ## Test
 
