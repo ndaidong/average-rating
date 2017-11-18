@@ -27,7 +27,6 @@
     "codecov": "^3.0.0",
     "eslint": "^4.11.0",
     "eslint-config-google": "^0.9.1",
-    "install-peers": "^1.0.2",
     "nsp": "^2.8.1",
     "nyc": "latest",
     "tap-spec": "^4.1.1",
