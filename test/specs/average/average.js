@@ -3,14 +3,13 @@
  * @ndaidong
  */
 
-var test = require('tape');
+const test = require('tape');
 
-var AverageRating = require('../../../index');
+const AverageRating = require('../../../index');
 
-var samples = require('../samples');
+const samples = require('../samples');
 
 test('Testing "average" method', (assert) => {
-
   samples.forEach((sample) => {
     let rating = sample.rating;
     let expect = sample.expect.average;
