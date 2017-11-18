@@ -2,5 +2,6 @@
  * Starting app
  * @ndaidong
 **/
-exports = module.exports = require('./src/main');
-exports.version = require('./package').version;
+const main = require('./src/main');
+main.version = require('./package').version;
+module.exports = main;
