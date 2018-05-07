@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "codecov": "^3.0.1",
+    "eslint": "^4.19.1",
     "eslint-config-goes": "^1.0.0",
     "nsp": "^3.2.1",
     "nyc": "^11.7.1",
@@ -40,8 +41,5 @@
     "Wilson Score",
     "util"
   ],
-  "license": "MIT",
-  "dependencies": {
-    "eslint": "^4.19.1"
-  }
+  "license": "MIT"
 }
