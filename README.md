@@ -46,6 +46,19 @@ Return a value from 0 to 1.
 
 Used for the systems of 5 rating levels, such as the applications on Google Play store, the books on Amazon, etc. In which, each of item can be voted as one of value in the range of 1 to 5 stars.
 
+##### Update
+
+- Since v1.1.5, this `rate` method accepts custom range of ratings. 5 or more values are OK.
+
+```
+let input = [3, 4, 2, 6, 12, 46, 134, 213, 116, 91, 45, 15, 58, 96, 1654]; // 15 values
+rate(input); // => 0.85
+
+rate([3, 4, 2, 6, 12, 46, 134, 213, 116, 91]); // => 0.74
+
+```
+
+
 ### .average(Array ratings)
 
 Return a value from 0 to 5.
