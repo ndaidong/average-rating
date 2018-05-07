@@ -9,23 +9,26 @@ const score = (p, n) => {
     return 0;
   }
   let r = ((p + 1.9208) / (p + n) - 1.96 * Math.sqrt(p * n / (p + n) + 0.9604) / (p + n)) / (1 + 3.8416 / (p + n));
-  return r.toFixed(2);
+  return Number(r.toFixed(2));
 };
+
 
 const rate = (rating) => {
-  let n = 0;
-  let p = 0;
-  n += rating[0];
-  n += rating[1] * 0.75;
-  p += rating[1] * 0.25;
-  n += rating[2] * 0.5;
-  p += rating[2] * 0.5;
-  n += rating[3] * 0.25;
-  p += rating[3] * 0.75;
-  p += rating[4];
+  let size = rating.length;
 
+  let n = rating[0];
+  let p = rating[size - 1];
+
+  let step = (1 / (size - 1)).toFixed(2);
+  let totalStep = size - 1;
+  for (let i = 1; i < totalStep; i++) {
+    let ep = (step * i).toFixed(2);
+    p += rating[i] * ep;
+    n += rating[totalStep - i] * ep;
+  }
   return score(p, n);
 };
+
 
 const average = (rating) => {
   let total = rating.reduce((prev, current) => {
@@ -43,8 +46,9 @@ const average = (rating) => {
     k++;
   });
   let r = sum / total;
-  return r.toFixed(1);
+  return Number(r.toFixed(1));
 };
+
 
 module.exports = {
   score,
