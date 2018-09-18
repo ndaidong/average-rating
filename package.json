@@ -1,5 +1,5 @@
 {
-  "version": "1.1.6",
+  "version": "1.1.7",
   "name": "average-rating",
   "description": "Calculate average score and rating based on Wilson Score Equation",
   "homepage": "https://www.npmjs.com/package/average-rating",
@@ -10,27 +10,19 @@
   "author": "@ndaidong",
   "main": "./index.js",
   "engines": {
-    "node": ">= 6.0"
+    "node": ">= 7.6"
   },
   "scripts": {
-    "lint": "eslint .",
-    "nsp": "nsp check --output checkstyle",
-    "tape": "nyc tape test/start.js | tap-spec",
-    "tape:debug": "DEBUG=*:* nyc tape test/start.js | tap-spec",
-    "report": "nyc report --reporter=lcov > coverage.lcov && codecov",
-    "pretest": "npm run lint && npm run nsp",
-    "test": "npm run tape",
-    "posttest": "CODECOV_TOKEN=47b63968-97ab-4ad1-8812-267ce37a3e5f npm run report",
+    "lint": "eslint src test/specs",
+    "pretest": "npm run lint",
+    "test": "COVERALLS_REPO_TOKEN=r4RUEgCLDFRBFQvIwGRL2NxWVxmx4J8Ob tap test/start.js --coverage --reporter=spec",
     "reset": "node reset"
   },
   "devDependencies": {
-    "codecov": "^3.0.1",
-    "eslint": "^4.19.1",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.6.0",
     "eslint-config-goes": "^1.0.0",
-    "nsp": "^3.2.1",
-    "nyc": "^11.7.1",
-    "tap-spec": "^4.1.1",
-    "tape": "^4.9.0"
+    "tap": "^12.0.1"
   },
   "keywords": [
     "rating",
