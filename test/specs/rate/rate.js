@@ -24,8 +24,8 @@ test('Testing "rate" method', (assert) => {
 test('Testing "rate" with custom range', (assert) => {
   let data = [
     {
-        input: [3, 4, 2, 6, 12, 46, 134, 213, 116, 91, 45, 15, 58, 96, 1654],
-        expect: 0.85,
+      input: [3, 4, 2, 6, 12, 46, 134, 213, 116, 91, 45, 15, 58, 96, 1654],
+      expect: 0.85,
     },
     {
       input: [3, 4, 2, 6, 12, 46, 134, 213, 116, 91],
@@ -40,8 +40,8 @@ test('Testing "rate" with custom range', (assert) => {
       expect: 0.62,
     },
     {
-        input: [125, 166, 17, 290, 400, 310, 1800],
-        expect: 0.79,
+      input: [125, 166, 17, 290, 400, 310, 1800],
+      expect: 0.79,
     },
   ];
 

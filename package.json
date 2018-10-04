@@ -1,5 +1,5 @@
 {
-  "version": "1.1.7",
+  "version": "1.1.8",
   "name": "average-rating",
   "description": "Calculate average score and rating based on Wilson Score Equation",
   "homepage": "https://www.npmjs.com/package/average-rating",
@@ -20,8 +20,7 @@
   },
   "devDependencies": {
     "coveralls": "^3.0.2",
-    "eslint": "^5.6.0",
-    "eslint-config-goes": "^1.0.0",
+    "eslint-config-goes": "^1.1.3",
     "tap": "^12.0.1"
   },
   "keywords": [
