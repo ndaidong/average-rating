@@ -5,7 +5,7 @@ Calculate  average and scoring based on Wilson Score Equation
 [![Build Status](https://travis-ci.org/ndaidong/average-rating.svg?branch=master)](https://travis-ci.org/ndaidong/average-rating)
 [![Coverage Status](https://coveralls.io/repos/github/ndaidong/average-rating/badge.svg?branch=master)](https://coveralls.io/github/ndaidong/average-rating?branch=master)
 
-![Google app on Google Play](http://i.imgur.com/NgQX5OW.png)
+![Google app on Google Play](https://i.imgur.com/XKEEpdb.png)
 
 ## Usage
 
