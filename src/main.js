@@ -8,21 +8,21 @@ const score = (p, n) => {
   if (p === 0 && n === 0) {
     return 0;
   }
-  let r = ((p + 1.9208) / (p + n) - 1.96 * Math.sqrt(p * n / (p + n) + 0.9604) / (p + n)) / (1 + 3.8416 / (p + n));
+  const r = ((p + 1.9208) / (p + n) - 1.96 * Math.sqrt(p * n / (p + n) + 0.9604) / (p + n)) / (1 + 3.8416 / (p + n));
   return Number(r.toFixed(2));
 };
 
 
 const rate = (rating) => {
-  let size = rating.length;
+  const size = rating.length;
 
   let n = rating[0];
   let p = rating[size - 1];
 
-  let step = (1 / (size - 1)).toFixed(2);
-  let totalStep = size - 1;
+  const step = (1 / (size - 1)).toFixed(2);
+  const totalStep = size - 1;
   for (let i = 1; i < totalStep; i++) {
-    let ep = (step * i).toFixed(2);
+    const ep = (step * i).toFixed(2);
     p += rating[i] * ep;
     n += rating[totalStep - i] * ep;
   }
@@ -31,7 +31,7 @@ const rate = (rating) => {
 
 
 const average = (rating) => {
-  let total = rating.reduce((prev, current) => {
+  const total = rating.reduce((prev, current) => {
     return prev + current;
   }, 0);
 
@@ -45,7 +45,7 @@ const average = (rating) => {
     sum += item * k;
     k++;
   });
-  let r = sum / total;
+  const r = sum / total;
   return Number(r.toFixed(1));
 };
 

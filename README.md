@@ -23,7 +23,7 @@ score(1000, 0); // --> 0.96
 score(1000, 1000); // --> 0.48
 
 // from 1 to 5 stars
-let rating = [134055, 57472, 143135, 365957, 1448459];
+const rating = [134055, 57472, 143135, 365957, 1448459];
 rate(rating); // --> 0.84
 
 // calculate average
@@ -49,7 +49,7 @@ Used for the systems of 5 rating levels, such as the applications on Google Play
 - Since v1.1.5, this `rate` method accepts custom range of ratings. 5 or more values are OK.
 
 ```
-let input = [3, 4, 2, 6, 12, 46, 134, 213, 116, 91, 45, 15, 58, 96, 1654]; // 15 values
+const input = [3, 4, 2, 6, 12, 46, 134, 213, 116, 91, 45, 15, 58, 96, 1654]; // 15 values
 rate(input); // => 0.85
 
 rate([3, 4, 2, 6, 12, 46, 134, 213, 116, 91]); // => 0.74

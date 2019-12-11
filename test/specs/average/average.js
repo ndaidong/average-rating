@@ -11,10 +11,10 @@ const samples = require('../samples');
 
 test('Testing "average" method', (assert) => {
   samples.forEach((sample) => {
-    let rating = sample.rating;
-    let expect = sample.expect.average;
-    let actual = Number(AverageRating.average(rating));
-    let s = rating.join(', ');
+    const rating = sample.rating;
+    const expect = sample.expect.average;
+    const actual = Number(AverageRating.average(rating));
+    const s = rating.join(', ');
     assert.deepEqual(actual, expect, `.average([${s}]) should be ${expect}`);
   });
 
