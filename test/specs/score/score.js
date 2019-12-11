@@ -77,8 +77,8 @@ const samples = [
 
 test('Testing "score" method', (assert) => {
   samples.forEach((sample) => {
-    let expect = sample.e;
-    let actual = Number(AverageRating.score(sample.p, sample.n));
+    const expect = sample.e;
+    const actual = Number(AverageRating.score(sample.p, sample.n));
     assert.deepEqual(actual, expect, `.score(${sample.p}, ${sample.n}) should be ${expect}`);
   });
   assert.end();

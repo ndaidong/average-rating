@@ -11,10 +11,10 @@ const samples = require('../samples');
 
 test('Testing "rate" method', (assert) => {
   samples.forEach((sample) => {
-    let rating = sample.rating;
-    let expect = sample.expect.score;
-    let actual = Number(AverageRating.rate(rating));
-    let s = rating.join(', ');
+    const rating = sample.rating;
+    const expect = sample.expect.score;
+    const actual = Number(AverageRating.rate(rating));
+    const s = rating.join(', ');
     assert.deepEqual(actual, expect, `.rate([${s}]) should be ${expect}`);
   });
 
@@ -22,7 +22,7 @@ test('Testing "rate" method', (assert) => {
 });
 
 test('Testing "rate" with custom range', (assert) => {
-  let data = [
+  const data = [
     {
       input: [3, 4, 2, 6, 12, 46, 134, 213, 116, 91, 45, 15, 58, 96, 1654],
       expect: 0.85,
@@ -46,12 +46,12 @@ test('Testing "rate" with custom range', (assert) => {
   ];
 
   data.map((sample) => {
-    let {
+    const {
       input,
       expect,
     } = sample;
-    let actual = AverageRating.rate(input);
-    let params = input.join(', ');
+    const actual = AverageRating.rate(input);
+    const params = input.join(', ');
     assert.deepEqual(actual, expect, `.rate([${params}]) should be ${expect}`);
     return actual;
   });
