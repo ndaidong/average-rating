@@ -1,7 +1,0 @@
-language: node_js
-node_js:
-  - "13.3"
-  - "12.3"
-  - "8.6"
-
-

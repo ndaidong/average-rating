@@ -14,7 +14,7 @@ const {
 
 const dirs = ['average', 'rate', 'score'];
 dirs.forEach((dir) => {
-  const where = './test/specs/' + dir;
+  const where = './tests/specs/' + dir;
   if (existsSync(where)) {
     readdirSync(where).forEach((file) => {
       if (extname(file) === '.js') {

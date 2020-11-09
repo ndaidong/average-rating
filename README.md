@@ -2,8 +2,9 @@
 Calculate  average and scoring based on Wilson Score Equation
 
 [![NPM](https://badge.fury.io/js/average-rating.svg)](https://badge.fury.io/js/average-rating)
-[![Build Status](https://travis-ci.org/ndaidong/average-rating.svg?branch=master)](https://travis-ci.org/ndaidong/average-rating)
-[![Coverage Status](https://coveralls.io/repos/github/ndaidong/average-rating/badge.svg?branch=master)](https://coveralls.io/github/ndaidong/average-rating?branch=master)
+![CI test](https://github.com/ndaidong/average-rating/workflows/ci-test/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/ndaidong/average-rating/badge.svg)](https://coveralls.io/github/ndaidong/average-rating)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ndaidong_average-rating&metric=alert_status)](https://sonarcloud.io/dashboard?id=ndaidong_average-rating)
 
 ![Google app on Google Play](https://i.imgur.com/XKEEpdb.png)
 
