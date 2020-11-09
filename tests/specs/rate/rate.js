@@ -45,7 +45,7 @@ test('Testing "rate" with custom range', (assert) => {
     },
   ];
 
-  data.map((sample) => {
+  data.forEach((sample) => {
     const {
       input,
       expect,
@@ -53,7 +53,6 @@ test('Testing "rate" with custom range', (assert) => {
     const actual = AverageRating.rate(input);
     const params = input.join(', ');
     assert.deepEqual(actual, expect, `.rate([${params}]) should be ${expect}`);
-    return actual;
   });
 
   assert.end();
