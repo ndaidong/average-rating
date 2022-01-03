@@ -5,33 +5,97 @@ Calculate  average and scoring based on Wilson Score Equation
 ![CI test](https://github.com/ndaidong/average-rating/workflows/ci-test/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/ndaidong/average-rating/badge.svg)](https://coveralls.io/github/ndaidong/average-rating)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ndaidong_average-rating&metric=alert_status)](https://sonarcloud.io/dashboard?id=ndaidong_average-rating)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ![Google app on Google Play](https://i.imgur.com/XKEEpdb.png)
 
+## Setup
+
+- Node.js
+
+  ```bash
+  npm i average-rating
+
+  # pnpm
+  pnpm i average-rating
+
+  # yarn
+  yarn add average-rating
+  ```
+
+- CDN
+
+  - ES6 Module: [average-rating.esm.js](https://unpkg.com/average-rating/dist/average-rating.esm.js)
+  - CommonJS: [average-rating.js](https://unpkg.com/average-rating/dist/cjs/average-rating.js)
+  - For old browsers: [average-rating.min.js](https://unpkg.com/average-rating/dist/average-rating.min.js)
+
 ## Usage
 
+### Node.js:
+
+Sync v14, ECMAScript modules [have became the official standard format](https://nodejs.org/docs/latest-v14.x/api/esm.html#esm_modules_ecmascript_modules).
+
+Just [enable](https://nodejs.org/api/packages.html#determining-module-system) and enjoy with ES6 import/export syntax.
+
+
+```js
+import {
+  score,
+  rate,
+  average
+} from 'average-rating'
 ```
+
+For regular CommonJS environment, `require` can be used as below:
+
+```js
 const {
   score,
   rate,
   average
-} = require('average-rating');
-
-
-// get Winson score for a pair of (Positive, Negative) voting
-score(0, 1000); // --> 0
-score(1000, 0); // --> 0.96
-score(1000, 1000); // --> 0.48
-
-// from 1 to 5 stars
-const rating = [134055, 57472, 143135, 365957, 1448459];
-rate(rating); // --> 0.84
-
-// calculate average
-average(rating); // --> 4.4
+} = require('average-rating/cjs/average-rating.js')
 ```
 
-# API reference
+### Browsers:
+
+Currently ECMAScript modules work fine on almost browsers:
+
+```html
+<script type="module">
+import { average } from 'https://unpkg.com/average-rating/dist/average-rating.esm.js'
+
+average([134055, 57472, 143135, 365957, 1448459])
+</script>
+```
+
+With outdated browsers, we can use traditional way:
+
+```html
+<script type="text/javascript" src="https://unpkg.com/average-rating/dist/average-rating.min.js"></script>
+
+<script>
+const { average } = window.AverageRating
+average([134055, 57472, 143135, 365957, 1448459])
+</script>
+```
+
+Example:
+
+```js
+// get Winson score for a pair of (Positive, Negative) voting
+score(0, 1000) // --> 0
+score(1000, 0) // --> 0.96
+score(1000, 1000) // --> 0.48
+
+// from 1 to 5 stars
+const rating = [134055, 57472, 143135, 365957, 1448459]
+rate(rating) // --> 0.84
+
+// calculate average
+average(rating) // --> 4.4
+```
+
+## APIs
 
 ### .score(Number positive, Number negative)
 
@@ -49,14 +113,12 @@ Used for the systems of 5 rating levels, such as the applications on Google Play
 
 - Since v1.1.5, this `rate` method accepts custom range of ratings. 5 or more values are OK.
 
+```js
+const input = [3, 4, 2, 6, 12, 46, 134, 213, 116, 91, 45, 15, 58, 96, 1654] // 15 values
+rate(input) // => 0.85
+
+rate([3, 4, 2, 6, 12, 46, 134, 213, 116, 91]) // => 0.74
 ```
-const input = [3, 4, 2, 6, 12, 46, 134, 213, 116, 91, 45, 15, 58, 96, 1654]; // 15 values
-rate(input); // => 0.85
-
-rate([3, 4, 2, 6, 12, 46, 134, 213, 116, 91]); // => 0.74
-
-```
-
 
 ### .average(Array ratings)
 
@@ -67,7 +129,7 @@ Calculate normal average value for the systems of 5 rating levels.
 
 ## Test
 
-```
+```bash
 git clone https://github.com/ndaidong/average-rating.git
 cd average-rating
 npm install

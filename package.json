@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
+  "version": "2.0.0",
   "name": "average-rating",
   "description": "Calculate average score and rating based on Wilson Score Equation",
   "homepage": "https://www.npmjs.com/package/average-rating",
@@ -8,20 +8,33 @@
     "url": "https://github.com/ndaidong/average-rating"
   },
   "author": "@ndaidong",
-  "main": "./index.js",
+  "main": "./dist/cjs/average-rating.js",
+  "module": "./src/main.js",
+  "browser": "./dist/average-rating.min.js",
+  "type": "module",
   "engines": {
-    "node": ">= 10.14.2"
+    "node": ">= 14"
   },
   "scripts": {
-    "lint": "eslint src tests/specs",
-    "pretest": "npm run lint",
-    "test": "tap tests/start.js --coverage --reporter=spec --coverage-report=html --no-browser",
-    "citest": "tap tests/start.js --coverage --reporter=spec --coverage-report=lcov --no-browser",
+    "lint": "standard ./src",
+    "pretest": "npm run lint && npm run build",
+    "test": "NODE_ENV=test jest --verbose --coverage=true --unhandled-rejections=strict --detectOpenHandles",
+    "build": "node build.js src/main.js",
     "reset": "node reset"
   },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
+  },
   "devDependencies": {
-    "eslint-config-goes": "^1.1.8",
-    "tap": "^14.10.8"
+    "@babel/plugin-transform-modules-commonjs": "^7.16.7",
+    "esbuild": "^0.14.10",
+    "jest": "^27.3.1"
   },
   "keywords": [
     "rating",
