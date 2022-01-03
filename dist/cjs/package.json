@@ -1,0 +1,5 @@
+{
+  "name": "average-rating-cjs",
+  "version": "2.0.0",
+  "main": "./average-rating.js"
+}
