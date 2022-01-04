@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.1",
   "name": "average-rating",
   "description": "Calculate average score and rating based on Wilson Score Equation",
   "homepage": "https://www.npmjs.com/package/average-rating",
@@ -16,11 +16,16 @@
     "node": ">= 14"
   },
   "scripts": {
-    "lint": "standard ./src",
-    "pretest": "npm run lint && npm run build",
+    "lint": "standard .",
+    "pretest": "npm run lint",
     "test": "NODE_ENV=test jest --verbose --coverage=true --unhandled-rejections=strict --detectOpenHandles",
-    "build": "node build.js src/main.js",
+    "build": "node build src/main.js",
     "reset": "node reset"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.16.7",
+    "esbuild": "^0.14.10",
+    "jest": "^27.3.1"
   },
   "babel": {
     "env": {
@@ -31,10 +36,10 @@
       }
     }
   },
-  "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.16.7",
-    "esbuild": "^0.14.10",
-    "jest": "^27.3.1"
+  "standard": {
+    "ignore": [
+      "/dist"
+    ]
   },
   "keywords": [
     "rating",
