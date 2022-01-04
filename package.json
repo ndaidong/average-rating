@@ -20,6 +20,7 @@
     "pretest": "npm run lint",
     "test": "NODE_ENV=test jest --verbose --coverage=true --unhandled-rejections=strict --detectOpenHandles",
     "build": "node build src/main.js",
+    "eval": "node eval",
     "reset": "node reset"
   },
   "devDependencies": {
