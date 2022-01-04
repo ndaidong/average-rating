@@ -14,17 +14,7 @@ execSync('rm -rf dist')
 execSync('mkdir dist')
 
 const buildTime = (new Date()).toISOString()
-const longComment = [
-  '/**',
-  ` * ${pkg.name}@${pkg.version}`,
-  ` * built with esbuild at: ${buildTime}`,
-  ` * repository: ${pkg.repository.url}`,
-  ` * maintainer: ${pkg.author}`,
-  ` * License: ${pkg.license}`,
-  '**/'
-].join('\n')
-
-const shortComment = [
+const comment = [
   `// ${pkg.name}@${pkg.version}, by ${pkg.author}`,
   `built with esbuild at ${buildTime}`,
   `published under ${pkg.license} license`
@@ -35,7 +25,7 @@ const baseOpt = {
   bundle: true,
   charset: 'utf8',
   target: ['es2020', 'node14'],
-  minify: true,
+  minify: false,
   write: true
 }
 
@@ -46,7 +36,7 @@ const esmVersion = {
   mainFields: ['module'],
   outfile: 'dist/average-rating.esm.js',
   banner: {
-    js: longComment
+    js: comment
   }
 }
 buildSync(esmVersion)
@@ -58,7 +48,7 @@ const cjsVersion = {
   mainFields: ['main'],
   outfile: 'dist/cjs/average-rating.js',
   banner: {
-    js: longComment
+    js: comment
   }
 }
 buildSync(cjsVersion)
@@ -82,8 +72,9 @@ const iifeVersion = {
   target: ['es2020'],
   globalName: 'AverageRating',
   outfile: 'dist/average-rating.min.js',
+  minify: true,
   banner: {
-    js: shortComment
+    js: comment
   }
 }
 buildSync(iifeVersion)

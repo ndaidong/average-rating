@@ -33,28 +33,27 @@ Calculate  average and scoring based on Wilson Score Equation
 
 ### Node.js:
 
-Sync v14, ECMAScript modules [have became the official standard format](https://nodejs.org/docs/latest-v14.x/api/esm.html#esm_modules_ecmascript_modules).
-
-Just [enable](https://nodejs.org/api/packages.html#determining-module-system) and enjoy with ES6 import/export syntax.
-
-
 ```js
 import {
   score,
   rate,
   average
 } from 'average-rating'
+
+// with CommonJS environment
+// const { score, rate, average } = require('feed-reader/dist/cjs/average-rating.js')
+
+score(80, 20) // => 0.71
+average([134055, 57472, 143135, 365957, 1448459]) // => 4.4
+rate([134055, 57472, 143135, 365957, 1448459]) // => 0.84
 ```
 
-For regular CommonJS environment, `require` can be used as below:
 
-```js
-const {
-  score,
-  rate,
-  average
-} = require('average-rating/cjs/average-rating.js')
-```
+##### Note:
+
+> Since Node.js v14, ECMAScript modules [have became the official standard format](https://nodejs.org/docs/latest-v14.x/api/esm.html#esm_modules_ecmascript_modules).
+> Just ensure that you are [using module system](https://nodejs.org/api/packages.html#determining-module-system) and enjoy with ES6 import/export syntax.
+
 
 ### Browsers:
 
