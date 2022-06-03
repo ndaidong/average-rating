@@ -1,4 +1,4 @@
-// average-rating@2.0.1, by @ndaidong - built with esbuild at 2022-01-04T03:58:54.537Z - published under MIT license
+// average-rating@2.0.2, by @ndaidong - built with esbuild at 2022-06-03T09:32:41.807Z - published under MIT license
 // src/main.js
 var score = (p, n) => {
   if (p === 0 && n === 0) {
