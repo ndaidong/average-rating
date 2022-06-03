@@ -1,26 +1,21 @@
-// average-rating@2.0.1, by @ndaidong - built with esbuild at 2022-01-04T03:58:54.537Z - published under MIT license
+// average-rating@2.0.2, by @ndaidong - built with esbuild at 2022-06-03T09:20:58.195Z - published under MIT license
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __markAsModule = (target) => __defProp(target, "__esModule", { value: true });
 var __export = (target, all) => {
   for (var name in all)
     __defProp(target, name, { get: all[name], enumerable: true });
 };
-var __reExport = (target, module2, copyDefault, desc) => {
-  if (module2 && typeof module2 === "object" || typeof module2 === "function") {
-    for (let key of __getOwnPropNames(module2))
-      if (!__hasOwnProp.call(target, key) && (copyDefault || key !== "default"))
-        __defProp(target, key, { get: () => module2[key], enumerable: !(desc = __getOwnPropDesc(module2, key)) || desc.enumerable });
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   }
-  return target;
+  return to;
 };
-var __toCommonJS = /* @__PURE__ */ ((cache) => {
-  return (module2, temp) => {
-    return cache && cache.get(module2) || (temp = __reExport(__markAsModule({}), module2, 1), cache && cache.set(module2, temp), temp);
-  };
-})(typeof WeakMap !== "undefined" ? /* @__PURE__ */ new WeakMap() : 0);
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
 // src/main.js
 var main_exports = {};
@@ -29,6 +24,7 @@ __export(main_exports, {
   rate: () => rate,
   score: () => score
 });
+module.exports = __toCommonJS(main_exports);
 var score = (p, n) => {
   if (p === 0 && n === 0) {
     return 0;
@@ -65,7 +61,6 @@ var average = (rating) => {
   const r = sum / total;
   return Number(r.toFixed(1));
 };
-module.exports = __toCommonJS(main_exports);
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   average,
