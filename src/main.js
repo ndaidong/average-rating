@@ -1,6 +1,5 @@
 /**
  * Calculate average score and rating based on Wilson Score Equation
- * @ndaidong
  * Refer: https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval
  **/
 

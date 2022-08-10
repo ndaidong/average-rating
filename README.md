@@ -48,13 +48,6 @@ average([134055, 57472, 143135, 365957, 1448459]) // => 4.4
 rate([134055, 57472, 143135, 365957, 1448459]) // => 0.84
 ```
 
-
-##### Note:
-
-> Since Node.js v14, ECMAScript modules [have became the official standard format](https://nodejs.org/docs/latest-v14.x/api/esm.html#esm_modules_ecmascript_modules).
-> Just ensure that you are [using module system](https://nodejs.org/api/packages.html#determining-module-system) and enjoy with ES6 import/export syntax.
-
-
 ### Browsers:
 
 Currently ECMAScript modules work fine on almost browsers:
