@@ -1,4 +1,4 @@
-// average-rating@2.0.2, by @ndaidong - built with esbuild at 2022-06-03T09:32:41.807Z - published under MIT license
+// average-rating@2.0.3, by @ndaidong - built with esbuild at 2022-08-10T15:12:36.260Z - published under MIT license
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
