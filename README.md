@@ -10,7 +10,7 @@ Calculate  average and scoring based on Wilson Score Equation
 
 ## Install & Usage
 
-- Node.js
+# Node.js
 
 ```bash
 npm i average-rating
