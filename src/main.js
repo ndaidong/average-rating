@@ -3,7 +3,7 @@
  * Refer: https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval
  **/
 
-export const score = (p, n) => {
+export const score = (p = 0, n = 0) => {
   if (p === 0 && n === 0) {
     return 0
   }
@@ -11,7 +11,7 @@ export const score = (p, n) => {
   return Number(r.toFixed(2))
 }
 
-export const rate = (rating) => {
+export const rate = (rating = []) => {
   const size = rating.length
 
   let n = rating[0]
@@ -27,7 +27,7 @@ export const rate = (rating) => {
   return score(p, n)
 }
 
-export const average = (rating) => {
+export const average = (rating = []) => {
   const total = rating.reduce((prev, current) => {
     return prev + current
   }, 0)

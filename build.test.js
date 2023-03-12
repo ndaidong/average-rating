@@ -33,7 +33,7 @@ const runtest = (fname) => {
 const arr = [
   esmFile,
   cjsFile,
-  minFile
+  minFile,
 ]
 
 arr.forEach((fname) => {

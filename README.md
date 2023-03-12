@@ -5,75 +5,84 @@ Calculate  average and scoring based on Wilson Score Equation
 ![CI test](https://github.com/ndaidong/average-rating/workflows/ci-test/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/ndaidong/average-rating/badge.svg)](https://coveralls.io/github/ndaidong/average-rating)
 ![CodeQL](https://github.com/ndaidong/average-rating/workflows/CodeQL/badge.svg)
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ![Google app on Google Play](https://i.imgur.com/XKEEpdb.png)
 
-## Setup
+## Install & Usage
 
 - Node.js
 
-  ```bash
-  npm i average-rating
+```bash
+npm i average-rating
 
-  # pnpm
-  pnpm i average-rating
+# pnpm
+pnpm i average-rating
 
-  # yarn
-  yarn add average-rating
-  ```
+# yarn
+yarn add average-rating
+```
 
-- CDN
-
-  - ES6 Module: [average-rating.esm.js](https://unpkg.com/average-rating/dist/average-rating.esm.js)
-  - CommonJS: [average-rating.js](https://unpkg.com/average-rating/dist/cjs/average-rating.js)
-  - For old browsers: [average-rating.min.js](https://unpkg.com/average-rating/dist/average-rating.min.js)
-
-## Usage
-
-### Node.js:
-
-```js
+```ts
+// es6 module
 import {
   score,
   rate,
   average
 } from 'average-rating'
 
-// with CommonJS environment
-// const { score, rate, average } = require('feed-reader/dist/cjs/average-rating.js')
+// CommonJS
+const {
+  score,
+  rate,
+  average
+} = require('average-rating')
+
+// or specify exactly path to CommonJS variant
+const {
+  score,
+  rate,
+  average
+} = require('average-rating/dist/cjs/average-rating.js')
 
 score(80, 20) // => 0.71
 average([134055, 57472, 143135, 365957, 1448459]) // => 4.4
 rate([134055, 57472, 143135, 365957, 1448459]) // => 0.84
 ```
 
-### Browsers:
+### Deno
+
+```ts
+// deno > 1.28
+import {
+  score,
+  rate,
+  average
+} from 'npm:average-rating'
+
+// deno < 1.28
+import {
+  score,
+  rate,
+  average
+} from 'https://esm.sh/average-rating'
+```
+
+### CDN
+
+- ES6 Module: [average-rating.esm.js](https://unpkg.com/average-rating/dist/average-rating.esm.js)
+- CommonJS: [average-rating.js](https://unpkg.com/average-rating/dist/cjs/average-rating.js)
+- For old browsers: [average-rating.min.js](https://unpkg.com/average-rating/dist/average-rating.min.js)
 
 Currently ECMAScript modules work fine on almost browsers:
 
 ```html
 <script type="module">
-import { average } from 'https://unpkg.com/average-rating/dist/average-rating.esm.js'
+import {
+  score,
+  rate,
+  average
+} from 'https://unpkg.com/average-rating/dist/average-rating.esm.js'
 
-average([134055, 57472, 143135, 365957, 1448459])
-</script>
-```
-
-With outdated browsers, we can use traditional way:
-
-```html
-<script type="text/javascript" src="https://unpkg.com/average-rating/dist/average-rating.min.js"></script>
-
-<script>
-const { average } = window.AverageRating
-average([134055, 57472, 143135, 365957, 1448459])
-</script>
-```
-
-Example:
-
-```js
 // get Winson score for a pair of (Positive, Negative) voting
 score(0, 1000) // --> 0
 score(1000, 0) // --> 0.96
@@ -85,6 +94,23 @@ rate(rating) // --> 0.84
 
 // calculate average
 average(rating) // --> 4.4
+</script>
+```
+
+With outdated browsers, we can use traditional way:
+
+```html
+<script type="text/javascript" src="https://unpkg.com/average-rating/dist/average-rating.min.js"></script>
+
+<script>
+const {
+  score,
+  rate,
+  average
+} = window.AverageRating
+
+// method call
+</script>
 ```
 
 ## APIs

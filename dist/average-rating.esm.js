@@ -1,13 +1,14 @@
-// average-rating@2.0.3, by @ndaidong - built with esbuild at 2022-08-10T15:12:36.260Z - published under MIT license
+// average-rating@2.0.4, by @ndaidong - built with esbuild at 2023-03-12T04:52:52.906Z - published under MIT license
+
 // src/main.js
-var score = (p, n) => {
+var score = (p = 0, n = 0) => {
   if (p === 0 && n === 0) {
     return 0;
   }
   const r = ((p + 1.9208) / (p + n) - 1.96 * Math.sqrt(p * n / (p + n) + 0.9604) / (p + n)) / (1 + 3.8416 / (p + n));
   return Number(r.toFixed(2));
 };
-var rate = (rating) => {
+var rate = (rating = []) => {
   const size = rating.length;
   let n = rating[0];
   let p = rating[size - 1];
@@ -20,7 +21,7 @@ var rate = (rating) => {
   }
   return score(p, n);
 };
-var average = (rating) => {
+var average = (rating = []) => {
   const total = rating.reduce((prev, current) => {
     return prev + current;
   }, 0);

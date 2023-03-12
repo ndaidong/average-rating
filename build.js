@@ -17,7 +17,7 @@ const buildTime = (new Date()).toISOString()
 const comment = [
   `// ${pkg.name}@${pkg.version}, by ${pkg.author}`,
   `built with esbuild at ${buildTime}`,
-  `published under ${pkg.license} license`
+  `published under ${pkg.license} license`,
 ].join(' - ')
 
 const baseOpt = {
@@ -26,7 +26,7 @@ const baseOpt = {
   charset: 'utf8',
   target: ['es2020', 'node14'],
   minify: false,
-  write: true
+  write: true,
 }
 
 const esmVersion = {
@@ -36,8 +36,8 @@ const esmVersion = {
   mainFields: ['module'],
   outfile: 'dist/average-rating.esm.js',
   banner: {
-    js: comment
-  }
+    js: comment,
+  },
 }
 buildSync(esmVersion)
 
@@ -48,15 +48,15 @@ const cjsVersion = {
   mainFields: ['main'],
   outfile: 'dist/cjs/average-rating.js',
   banner: {
-    js: comment
-  }
+    js: comment,
+  },
 }
 buildSync(cjsVersion)
 
 const cjspkg = {
-  name: pkg.name + '-cjs',
+  name: pkg.name,
   version: pkg.version,
-  main: './average-rating.js'
+  main: './average-rating.js',
 }
 writeFileSync(
   'dist/cjs/package.json',
@@ -74,7 +74,7 @@ const iifeVersion = {
   outfile: 'dist/average-rating.min.js',
   minify: true,
   banner: {
-    js: comment
-  }
+    js: comment,
+  },
 }
 buildSync(iifeVersion)
