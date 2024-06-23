@@ -1,0 +1,31 @@
+{
+  "name": "@ndaidong/average-rating",
+  "version": "3.0.0-rc1",
+  "description": "Calculate average score and rating based on Wilson Score Equation",
+  "homepage": "https://github.com/ndaidong/average-rating",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ndaidong/average-rating.git"
+  },
+  "author": "@ndaidong",
+  "license": "MIT",
+  "tasks": {
+    "build": "deno run -A ./scripts/build_npm.ts"
+  },
+  "imports": {
+    "assert": "https://deno.land/std@0.224.0/assert/mod.ts",
+    "@deno/dnt": "jsr:@deno/dnt@^0.41.2"
+  },
+  "exports": "./mod.ts",
+  "test": {
+    "include": ["tests"],
+    "exclude": []
+  },
+  "publish": {
+    "include": [
+      "LICENSE",
+      "README.md",
+      "mod.ts"
+    ]
+  }
+}

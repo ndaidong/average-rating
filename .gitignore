@@ -5,13 +5,18 @@ logs
 
 # Runtime data
 *.pid
+*.lock
 *.seed
 
 node_modules
 coverage
+coverage.lcov
 .nyc_output
 
 yarn.lock
-coverage.lcov
-package-lock.json
 pnpm-lock.yaml
+package-lock.json
+
+npm
+cov
+cov.lcov
