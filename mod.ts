@@ -40,7 +40,6 @@ export const rate = (rating: number[] = []): number => {
   return score(p, n);
 };
 
-
 /**
  * Calculate average value for the systems of 5 rating levels
  *

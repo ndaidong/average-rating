@@ -112,7 +112,8 @@ Used for the systems of Positive/Negative rating, such as the videos on YouTube,
 the answers on StackOverflow, etc. In which, each of item can be voted as good
 or bad, like or dislike or something like that.
 
-For example, here we calculate score of a blog post with 80 likes and 20 dislikes:
+For example, here we calculate score of a blog post with 80 likes and 20
+dislikes:
 
 ```ts
 import { score } from "@ndaidong/average-rating";
@@ -127,7 +128,6 @@ Return a value from 0 to 1.
 Used for the systems of 5 rating levels, such as the applications on Google Play
 store, the books on Amazon, etc. In which, each of item can be voted as one of
 value in the range of 1 to 5 stars.
-
 
 For example, here we calculate rating value of a product with:
 
