@@ -8,39 +8,31 @@ on: [push, pull_request]
 jobs:
   test:
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node_version: [14.x, 16.x, 18.x, 19.x]
+        deno-version: [1.44.4]
 
     steps:
-    - uses: actions/checkout@v3
+      - name: Git Checkout Deno Module
+        uses: actions/checkout@v4
+      - name: Use Deno Version ${{ matrix.deno-version }}
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: ${{ matrix.deno-version }}
+      - name: format check
+        run: deno fmt --check mod.ts scripts/* tests/*
+      - name: run linter
+        run: deno lint mod.ts utils/* scripts/* tests/*
+      - name: run test
+        run: deno test --allow-all --coverage=cov/
 
-    - name: setup Node.js v${{ matrix.node_version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node_version }}
+      - name: Generate coverage report
+        run: deno coverage --lcov cov > cov.lcov
 
-    - name: run npm scripts
-      run: |
-        npm install
-        npm run lint
-        npm run build --if-present
-        npm run test
-
-    - name: Coveralls GitHub Action
-      uses: coverallsapp/github-action@v1.1.2
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: cache node modules
-      uses: actions/cache@v3
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-
-
-
+      - name: Upload coverage to Coveralls.io
+        uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: cov.lcov
