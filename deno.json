@@ -1,6 +1,6 @@
 {
   "name": "@ndaidong/average-rating",
-  "version": "3.0.0-rc1",
+  "version": "3.0.0",
   "description": "Calculate average score and rating based on Wilson Score Equation",
   "homepage": "https://github.com/ndaidong/average-rating",
   "repository": {
