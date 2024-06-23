@@ -44,7 +44,7 @@ export const rate = (rating: number[] = []): number => {
  * Calculate average value for the systems of 5 rating levels
  *
  * @param rating An array of rating value
- * @returns a float value from 0 to 1
+ * @returns a float value from 0 to 5
  */
 export const average = (rating: number[] = []): number => {
   const total: number = rating.reduce((prev, current) => {

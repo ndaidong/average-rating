@@ -106,14 +106,12 @@ average([134055, 57472, 143135, 365957, 1448459]) // => 4.4
 
 ### .score(Number positive, Number negative)
 
-Return a value from 0 to 1.
+This method returns a normalized value between 0 and 1, but it's applicable for systems
+with only positive and negative ratings (like/dislike, thumbs up/thumbs down).
+Examples include videos on YouTube or answers on Stack Overflow.
+In these systems, users can express their opinion by voting for either a positive or negative option.
 
-Used for the systems of Positive/Negative rating, such as the videos on YouTube,
-the answers on StackOverflow, etc. In which, each of item can be voted as good
-or bad, like or dislike or something like that.
-
-For example, here we calculate score of a blog post with 80 likes and 20
-dislikes:
+Let's illustrate how this method works with a blog post that received 80 likes and 20 dislikes:
 
 ```ts
 import { score } from "@ndaidong/average-rating";
@@ -123,19 +121,17 @@ score(80, 20); // => 0.71
 
 ### .rate(Array ratings)
 
-Return a value from 0 to 1.
+This method returns a normalized value between 0 and 1, commonly used in rating systems with 5 levels.
+Examples include applications on Google Play Store or books on Amazon.
+In these systems, each item receives a user rating between 1 and 5 stars.
 
-Used for the systems of 5 rating levels, such as the applications on Google Play
-store, the books on Amazon, etc. In which, each of item can be voted as one of
-value in the range of 1 to 5 stars.
+Let's take a product with a large volume of reviews as an example. Here's how we calculate its rating:
 
-For example, here we calculate rating value of a product with:
-
-- 134,055 rates of 1 star
-- 57,472 rates of 2 stars
-- 143,135 rates of 3 stars
-- 365,957 rates of 4 stars
-- 1,448,459 rates of 5 stars
+- 134,055 customers rated it 1 star
+- 57,472 gave it a 2-star rating
+- There are 143,135 ratings of 3 stars
+- It received a 4-star rating from 365,957 users
+- And a whopping 1,448,459 customers rated it 5 stars
 
 ```ts
 import { rate } from "@ndaidong/average-rating";
@@ -160,6 +156,12 @@ rate([3, 4, 2, 6, 12, 46, 134, 213, 116, 91]); // => 0.74
 Return a value from 0 to 5.
 
 Calculate normal average value for the systems of 5 rating levels.
+
+```ts
+import { average } from "@ndaidong/average-rating";
+
+average([134055, 57472, 143135, 365957, 1448459]); // => 4.4
+```
 
 ## Development
 
